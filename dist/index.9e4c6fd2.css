@@ -36,4 +36,9 @@
   box-shadow: 0 2px 5px #000;
 }
 
+.cardbody {
+  flex-wrap: wrap;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDom from 'react-dom/client'
 const heading = React.createElement(
     "h1", {
     id: "title"
@@ -10,12 +10,12 @@ const heading = React.createElement(
 const Title = () => {
     return (
         // <small>FOOD VILLA</small>
-        <img src="https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg" alt="logo gose here" className='logo' srcset="" />
+        <img src="https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg" alt="logo gose here" className='logo'  />
     )
 }
-const colorAA={
-    backgroundColor:"grey",
-    border:"3.001px solid black"
+const colorAA = {
+    backgroundColor: "grey",
+    border: "3.001px solid black"
 }
 const HeaderComponent = () => {
     return (
@@ -32,30 +32,92 @@ const HeaderComponent = () => {
         </div>
     )
 }
-const data={
-    image:"https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
-    name:"Burger king",
-    cusines:["Burger","Americans"],
-    rating:"4.3"
-}
-const RestrauntCard=()=>{
-    return(
+const config = [
+    {
+        type: "carousel",
+        cards: [
+            {
+                offerName: "50% off"
+            },
+            {
+                offerName: "No delivery charge"
+            },
+
+        ],
+        
+    },
+    {
+        type: "resuraurants",
+        cards: [
+            {
+                image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+                name: "Burger king",
+                cusines: ["Burger", "Americans"],
+                rating: "4.3"
+            },
+            {
+                image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+                name: "KFC",
+                cusines: ["Burger", "Americans"],
+                rating: "4.3"
+            }
+           
+
+        ],
+        
+    },
+    
+
+]
+const restrautlist = [{
+    image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+    name: "Burger king",
+    cusines: ["Burger", "Americans"],
+    rating: "4.3",
+    id:1
+},
+{
+    image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+    name: "KFC",
+    cusines: ["kfc", "Americans"],
+    rating: "4.3",
+    id:2
+},
+{
+    image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+    name: "Nahdi mandi",
+    cusines: ["mandi", "bangalore","kannur"],
+    rating: "4.3",
+    id:3
+}]
+const RestrauntCard = (props) => {
+    console.log(props);
+    const {image,name,cusines,rating}=props.datalist
+    console.log(cusines)
+    console.log(name);
+    return (
         <div className='card'>
-            <img  src={data.image} alt="" />
-            <h2 style={{fontFamily:""}}>{data.name}</h2>
-            <small>{data.cusines}</small>
-            <h5>{data.rating}</h5>
+            <img src={image} alt="" />
+            <h2 style={{ fontFamily: "" }}>{name}</h2>
+            <small>{cusines?.join(',')}</small>
+            <h5>{rating}</h5>
         </div>
     )
 }
 const Body = () => {
     return (
-        <div>
-            <RestrauntCard/>
+        <div className='cardbody'>
+            {restrautlist.map((data)=>{
+
+           return <RestrauntCard key={data.id}  datalist={data} hello="card data has passed here"/>
+            })}
+
+        
+
         </div>
     )
 }
-const Footer=()=>{
+const Footer = () => {
     return (
         <h6>footer</h6>
     )
@@ -64,14 +126,14 @@ const Footer=()=>{
 const Applayout = () => {
     return (
         <>
-        <HeaderComponent />
-        <Body/>
-        <Footer/> 
+            <HeaderComponent />
+            <Body />
+            <Footer />
         </>
 
     )
 }
 
 const root = ReactDom.createRoot(document.getElementById('root'))
- 
+
 root.render(<Applayout />)
