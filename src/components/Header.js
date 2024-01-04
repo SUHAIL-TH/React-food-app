@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 //import image from a folder
 // import Logo from '../assets/img/'
 
@@ -11,7 +13,12 @@ const loggedInUser=()=>{
 const Title = () => {
     return (
         // <small>FOOD VILLA</small>
+        
+        <a href="/">
+            
         <img src="https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg" alt="logo gose here" className='logo'  />
+        </a>
+        
     )
 }
 const colorAA = {
@@ -25,9 +32,9 @@ const HeaderComponent = () => {
             <Title ></Title  >
             <div className='nav-items'>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                  <Link  to="/"><li >Home</li></Link>  
+                  <Link to="/about">  <li>About</li></Link>
+                   <Link to="/contact"><li>Contact</li></Link> 
                     <li>cart</li>
                 </ul>
             </div>

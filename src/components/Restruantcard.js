@@ -1,5 +1,5 @@
 const RestrauntCard = (props) => {
-    console.log(props);
+    // console.log(props);
     const {image,name,cusines,rating}=props.datalist
     
     return (

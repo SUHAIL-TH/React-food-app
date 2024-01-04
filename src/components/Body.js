@@ -29,7 +29,7 @@ const Body = () => {
     useEffect(()=>{
         console.log("jooo")
         // geRestuareants()
-    },[])
+    },[])//if give we somthing inside the depedency array this use Effect will render when ever a change in this dependecny array has occured
 
     /////this is used to make the api call in side the useEffect
     // async function geRestuareants(){
@@ -37,7 +37,6 @@ const Body = () => {
     //     console.log("hii suhail")
     //     const data=await fetch("https://www.swiggy.com/dapi/restaurants/List/v5?lat=12.9351929&lng=77.62448069999999&page_typr=DESKTOP_WEB_LISTING")
     //     const json=await data.json()
-    //     console.log(json)
     //     console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
     // }
