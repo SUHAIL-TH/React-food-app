@@ -1,3 +1,13 @@
+import { useState } from "react"
+//import image from a folder
+// import Logo from '../assets/img/'
+
+const loggedInUser=()=>{
+    //api call to check for authtentication
+    //if there is authentication returen true other wise return false
+    return false
+}
+
 const Title = () => {
     return (
         // <small>FOOD VILLA</small>
@@ -9,17 +19,21 @@ const colorAA = {
     border: "3.001px solid black"
 }
 const HeaderComponent = () => {
+    const[isLoggedIn,setIsLoggedIn]=useState(false )
     return (
         <div style={colorAA} className='header'>
             <Title ></Title  >
             <div className='nav-items'>
-                <ul >
+                <ul>
                     <li>Home</li>
                     <li>About</li>
                     <li>Contact</li>
                     <li>cart</li>
                 </ul>
             </div>
+            {isLoggedIn?   <button onClick={()=>setIsLoggedIn(false)}>LogOut</button>:  <button onClick={()=>setIsLoggedIn(true)}>LogIn</button>}
+         
+          
         </div>
     )
 }

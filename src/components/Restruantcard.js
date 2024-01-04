@@ -1,4 +1,5 @@
 const RestrauntCard = (props) => {
+    console.log(props);
     const {image,name,cusines,rating}=props.datalist
     
     return (
@@ -10,4 +11,5 @@ const RestrauntCard = (props) => {
         </div>
     )
 }
+//this is used for the default export
 export default RestrauntCard

@@ -10,9 +10,6 @@ const heading = React.createElement(
     "hello suhail how are your"
 
 )
-
-
-
 const config = [
     {
         type: "carousel",
@@ -25,7 +22,7 @@ const config = [
             },
 
         ],
-        
+
     },
     {
         type: "resuraurants",
@@ -42,16 +39,14 @@ const config = [
                 cusines: ["Burger", "Americans"],
                 rating: "4.3"
             }
-           
+
 
         ],
-        
+
     },
-    
+
 
 ]
-
-
 
 const Applayout = () => {
     return (

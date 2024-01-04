@@ -8,7 +8,7 @@ export const restrautlist = [{
 {
     image: "https://www.searchhyderabad.com/wp-content/uploads/2022/07/KFC-Bangalore-Address.jpg",
     name: "KFC",
-    cusines: ["kfc", "Americans"],
+    cusines: ["kfc", "Americans","cons","grilled"],
     rating: "4.3",
     id:2
 },
