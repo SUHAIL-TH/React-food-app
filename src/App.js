@@ -7,6 +7,7 @@ import About from './components/About'
 import Error from './components/Error'
 import Contact from './components/Contact'
 import RestaurentMenu from './components/RestuarentMenu'
+import Profile from './components/Profile'
 //import createbrowser router from react router dom for routing
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 //basic way to create a react element
@@ -48,7 +49,11 @@ const appRouter = createBrowserRouter([
             },
             {
                 path:"/about",
-                element:<About/>
+                element:<About/>,
+                children:[{
+                    path:"profile",
+                    element:<Profile/>
+                }]
             },
             {
                 path: "/contact",
