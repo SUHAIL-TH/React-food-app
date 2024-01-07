@@ -4,6 +4,7 @@ import RestrauntCard from './Restruantcard'
 import { filterlist } from '../../utils/helper'
 //filtering function for the list
 
+import useOnline from '../../utils/useOnline'
 
 
 const Body = () => {
@@ -32,6 +33,13 @@ const Body = () => {
     //     console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
     // }
+    const offline=useOnline();
+    console.log(offline)
+    let da=true
+    //this help to check for wheter we are online or ofline
+    if(!da){
+       return <h3 style={{color:"red"}}>🛑🛑🛑🛑🛑🛑🛑please check your internet  connection🛑🛑🛑🛑🛑🛑🛑🛑</h3>
+    }
     return (
         <>
             <div className='search-container'>

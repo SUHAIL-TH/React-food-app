@@ -34105,8 +34105,10 @@ var _constant = require("../constant");
 var _restruantcard = require("./Restruantcard");
 var _restruantcardDefault = parcelHelpers.interopDefault(_restruantcard);
 var _helper = require("../../utils/helper");
-var _s = $RefreshSig$();
 //filtering function for the list
+var _useOnline = require("../../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     const serchTxt = "kfc";
@@ -34130,6 +34132,20 @@ const Body = ()=>{
     //     console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
     // }
+    const offline = (0, _useOnlineDefault.default)();
+    console.log(offline);
+    let da = true;
+    //this help to check for wheter we are online or ofline
+    if (!da) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+        style: {
+            color: "red"
+        },
+        children: "\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1please check your internet  connection\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1"
+    }, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 41,
+        columnNumber: 15
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34145,7 +34161,7 @@ const Body = ()=>{
                         value: searchText
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 38,
+                        lineNumber: 46,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34158,13 +34174,13 @@ const Body = ()=>{
                         children: "search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 41,
+                        lineNumber: 49,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 37,
+                lineNumber: 45,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34175,19 +34191,23 @@ const Body = ()=>{
                         hello: "card data has passed here"
                     }, data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 49,
+                        lineNumber: 57,
                         columnNumber: 28
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 47,
+                lineNumber: 55,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "3GX5ilMacOf82ErIqcghXoBpuHc=");
+_s(Body, "bl8pXVQett3nZwBXMTb+Qzdl/rQ=", false, function() {
+    return [
+        (0, _useOnlineDefault.default)
+    ];
+});
 _c = Body;
 exports.default = Body;
 var _c;
@@ -34198,7 +34218,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/helper":"9L4Sx"}],"jVIFP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/helper":"9L4Sx","../../utils/useOnline":"bc9W5"}],"jVIFP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "restrautlist", ()=>restrautlist);
@@ -34319,7 +34339,50 @@ function filterlist(searchtext, list) {
     else return list.filter((data)=>data?.name.toLowerCase().includes(searchtext.toLowerCase()));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8pPOA":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bc9W5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9de7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9de7.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        const handleOnline = ()=>{
+            //if i go online then setthe stataus as true
+            setIsOnline(true);
+        };
+        const handleOfline = ()=>{
+            setIsOnline(false);
+        };
+        //this code will run onces when we load the 
+        //this is a browser event that check for whether it is online or ofline
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOfline);
+        return ()=>{
+            //this will remove the event listenre form the browser when we change the componet this is unmound methode ,it help to increase the performances      
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOfline);
+        };
+    }, []);
+    return isOnline //return the status whether it is online or ofline
+    ;
+};
+_s(useOnline, "tQ+jeuTfaQWyt2cny0PnlZvq2jE=");
+exports.default = useOnline;
+
+  $parcel$ReactRefreshHelpers$9de7.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
