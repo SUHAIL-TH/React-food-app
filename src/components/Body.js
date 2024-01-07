@@ -1,16 +1,8 @@
 import { useEffect, useState } from 'react'
 import { restrautlist } from '../constant'
 import RestrauntCard from './Restruantcard'
-
+import { filterlist } from '../../utils/helper'
 //filtering function for the list
-function filterlist(searchtext, list) {
-    if (searchtext === "") {
-        return restrautlist
-    }
-    else {
-        return list.filter((data) => data?.name.toLowerCase().includes(searchtext.toLowerCase()))
-    }
-}
 
 
 

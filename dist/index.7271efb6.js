@@ -2980,17 +2980,17 @@ const Applayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 31,
+                lineNumber: 32,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined)
         ]
@@ -3002,13 +3002,13 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Applayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 42,
+            lineNumber: 43,
             columnNumber: 18
         }, undefined),
         //this will load the error page when the route we provided is invalid  
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 44,
+            lineNumber: 45,
             columnNumber: 23
         }, undefined),
         children: [
@@ -3016,7 +3016,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 48,
+                    lineNumber: 49,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3024,7 +3024,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 52,
+                    lineNumber: 53,
                     columnNumber: 25
                 }, undefined),
                 children: [
@@ -3032,7 +3032,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 29
                         }, undefined)
                     }
@@ -3042,7 +3042,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 61,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3051,7 +3051,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restuarent/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarentMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 64,
+                    lineNumber: 65,
                     columnNumber: 25
                 }, undefined)
             }
@@ -3063,7 +3063,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 76,
+    lineNumber: 77,
     columnNumber: 13
 }, undefined)) // const config = [
  //     {
@@ -34104,12 +34104,9 @@ var _react = require("react");
 var _constant = require("../constant");
 var _restruantcard = require("./Restruantcard");
 var _restruantcardDefault = parcelHelpers.interopDefault(_restruantcard);
+var _helper = require("../../utils/helper");
 var _s = $RefreshSig$();
 //filtering function for the list
-function filterlist(searchtext, list) {
-    if (searchtext === "") return 0, _constant.restrautlist;
-    else return list.filter((data)=>data?.name.toLowerCase().includes(searchtext.toLowerCase()));
-}
 const Body = ()=>{
     _s();
     const serchTxt = "kfc";
@@ -34148,26 +34145,26 @@ const Body = ()=>{
                         value: searchText
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 46,
+                        lineNumber: 38,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-button",
                         onClick: ()=>{
                             //update the restuarent data
-                            const data = filterlist(searchText, allrestuarent);
+                            const data = (0, _helper.filterlist)(searchText, allrestuarent);
                             setFilterrestuarent(data);
                         },
                         children: "search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 49,
+                        lineNumber: 41,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 45,
+                lineNumber: 37,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34178,13 +34175,13 @@ const Body = ()=>{
                         hello: "card data has passed here"
                     }, data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 57,
+                        lineNumber: 49,
                         columnNumber: 28
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 55,
+                lineNumber: 47,
                 columnNumber: 13
             }, undefined)
         ]
@@ -34201,7 +34198,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jVIFP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/helper":"9L4Sx"}],"jVIFP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "restrautlist", ()=>restrautlist);
@@ -34214,7 +34211,8 @@ const restrautlist = [
             "Americans"
         ],
         rating: "4.3",
-        id: 1
+        id: 1,
+        place: "Bangalore"
     },
     {
         image: "https://www.searchhyderabad.com/wp-content/uploads/2022/07/KFC-Bangalore-Address.jpg",
@@ -34226,7 +34224,8 @@ const restrautlist = [
             "grilled"
         ],
         rating: "4.3",
-        id: 2
+        id: 2,
+        place: "kannur"
     },
     {
         image: "https://b.zmtcdn.com/data/pictures/1/19499081/6552ee7f14a55b30df14c797726470b0.jpg",
@@ -34237,7 +34236,8 @@ const restrautlist = [
             "kannur"
         ],
         rating: "4.3",
-        id: 3
+        id: 3,
+        place: "calicut "
     }
 ];
 
@@ -34307,7 +34307,19 @@ $RefreshReg$(_c, "RestrauntCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9L4Sx":[function(require,module,exports) {
+//this is the place where we used to make the code that used several time
+//this make our code more redable,testable
+//this make our code more maintanab le
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterlist", ()=>filterlist);
+function filterlist(searchtext, list) {
+    if (searchtext === "") return restrautlist;
+    else return list.filter((data)=>data?.name.toLowerCase().includes(searchtext.toLowerCase()));
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8pPOA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34349,52 +34361,253 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _header = require("./Header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
 var _reactRouterDom = require("react-router-dom");
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                style: {
-                    margin: "10px"
-                },
-                children: "About us PAGE"
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: {
-                    margin: "10px"
-                },
-                children: "This  is the food card displaying app contain all about the food"
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/About.js",
-        lineNumber: 5,
-        columnNumber: 9
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
+var _profile = require("./Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _profileClass = require("./ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// const About =()=>{
+//     return (
+//         <div>
+//             {/* <HeaderComponent></HeaderComponent> */}
+//             <h1 style={{margin:"10px"}}>About us PAGE</h1>
+//             <p style={{margin:"10px"}}>This  is the food card displaying app contain all about the food</p>
+//             {/* <Outlet></Outlet> */}
+//             <ProfileFunction name={"my name is ajmal"}></ProfileFunction>
+//             <ProfileClass age={"my age is 28"}></ProfileClass>
+//         </div>
+//     )
+// }
+//this is the way to create class based about component
+class AboutClass extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+    }
+    componentDidMount() {
+        //this is the best place to make an api call be this is called after render function
+        console.log("compoent didMount");
+    }
+    render() {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    style: {
+                        margin: "10px"
+                    },
+                    children: "About us PAGE"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 31,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    style: {
+                        margin: "10px"
+                    },
+                    children: "This  is the food card displaying app contain all about the food"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 32,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                    name: "my name is ajmal"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 34,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                    age: "my age is 28"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 35,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/About.js",
+            lineNumber: 29,
+            columnNumber: 13
+        }, this);
+    }
+}
+// export default About
+exports.default = AboutClass;
 
   $parcel$ReactRefreshHelpers$5b98.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Header":"hsJbF","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Header":"hsJbF","react-router-dom":"9xmpe","./Profile":"h0rtF","./ProfileClass":"aeEz8","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b52a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+//useState hook is used to create a state in function componet
+const Profile = (props)=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    (0, _react.useEffect)(()=>{
+    //USE effect is used to make api call
+    //this is called after the render function has worked then useeffect is worked
+    });
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "profile component"
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 15,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                children: props.name
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 16,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    "Count:",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 17,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setCount(count + 1),
+                children: "click"
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Profile, "f6rNyXb4nKr8df0VUP2jADfsx6o=");
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$b52a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1beb.prelude(module);
+
+try {
+//this is the way to create class componet here the render methode is import thing wiht out 
+//this wont work and it will return somthing
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Profile extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        //create state  ===in class compoent we create state inisde the constructor
+        //becaues this is called first when the class component is called because constructori  is called first
+        this.state = {
+            count: 0,
+            count2: 0
+        };
+    }
+    //impt
+    //every time a componetn is render mouting will happend 
+    //if the componet does not have a state then update will not work
+    //if we leave the component then only the umouting happen
+    componentDidMount() {
+        //this is life cyle methode this will called after the componet render has called
+        //this is the best place to make an api call
+        //this componentDidMount  can be make async
+        console.log("jii");
+    }
+    //component did Update
+    componentDidUpdate(prevProps, prevState) {
+        //this will called after every render of the component
+        //this will we called when ever the state change or any update has made then this will be called after the rendering
+        this.state.count, prevState.count;
+    }
+    componentWillUnmount() {
+    //this is used for clean up inorder to ovoid unnessary thing running in the componet after we leave this
+    //this life cycle will be called when we exit form the componet or leave the componet
+    }
+    //redender function is most important thing in class compoent with out this wount wrk
+    render() {
+        //we call also destructor it useing 
+        let { count } = this.state //this count can be used here it is destructor
+        ;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "hello class component"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 47,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                    children: this.props.age
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 48,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                    children: [
+                        "state in count:",
+                        this.state.count
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 49,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        this.setState({
+                            count: this.state.count + 1
+                        });
+                    },
+                    children: "Add"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 50,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true);
+    }
+}
+exports.default = Profile;
+
+  $parcel$ReactRefreshHelpers$1beb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34510,11 +34723,16 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
+var _useRestuarent = require("../../utils/useRestuarent");
+var _useRestuarentDefault = parcelHelpers.interopDefault(_useRestuarent);
 var _s = $RefreshSig$();
 const RestaurentMenu = ()=>{
     _s();
     const params = (0, _reactRouterDom.useParams)();
     console.log(params);
+    //this is the way use custome hook to get the data formt the api for 
+    //                 -  the custome rendering
+    let data = (0, _useRestuarentDefault.default)(params);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -34524,26 +34742,27 @@ const RestaurentMenu = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestuarentMenu.js",
-                lineNumber: 7,
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Jumana"
             }, void 0, false, {
                 fileName: "src/components/RestuarentMenu.js",
-                lineNumber: 8,
+                lineNumber: 12,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/RestuarentMenu.js",
-        lineNumber: 6,
+        lineNumber: 10,
         columnNumber: 9
     }, undefined);
 };
-_s(RestaurentMenu, "+jVsTcECDRo3yq2d7EQxlN9Ixog=", false, function() {
+_s(RestaurentMenu, "bDOs6PEj221tVLivBziDwgS0cAE=", false, function() {
     return [
-        (0, _reactRouterDom.useParams)
+        (0, _reactRouterDom.useParams),
+        (0, _useRestuarentDefault.default)
     ];
 });
 _c = RestaurentMenu;
@@ -34556,35 +34775,31 @@ $RefreshReg$(_c, "RestaurentMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b52a.prelude(module);
-
-try {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../../utils/useRestuarent":"c7zmd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"c7zmd":[function(require,module,exports) {
+//this is way the create a cutsom hook we can resuse it
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Profile = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "profile component"
-    }, void 0, false, {
-        fileName: "src/components/Profile.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
+var _s = $RefreshSig$();
+const useRestaurent = (resId)=>{
+    _s();
+    //want to create a state to get the data
+    const [resData, setResData] = useState();
+    //GET DATA FROM API
+    useEffect(()=>{
+        getRestaruentData();
+    }, []);
+    async function getRestaruentData() {
+        let Data = await fetch("http");
+        const jsData = await Data.json();
+        setResData(jsData);
+    }
+    //reurn restruarnt data
+    return resData;
+//THIS is returning the state
 };
-_c = Profile;
-exports.default = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
+_s(useRestaurent, "xNOhxTLSY+sOz+9nt6aZKiIOoB4=");
+exports.default = useRestaurent;
 
-  $parcel$ReactRefreshHelpers$b52a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
 
 //# sourceMappingURL=index.7271efb6.js.map
