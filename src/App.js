@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDom from 'react-dom/client'
 import HeaderComponent from './components/Header'
 import Body from './components/Body'
@@ -11,6 +11,10 @@ import RestaurentMenu from './components/RestuarentMenu'
 import Profile from './components/Profile'
 //import createbrowser router from react router dom for routing
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+// import Instamart from './components/Instamart'
+
+
+
 //basic way to create a react element
 //outlet===the childern will go to the outlet according to  the route 
 const heading = React.createElement(
@@ -25,6 +29,10 @@ const heading = React.createElement(
 //2 server side routing 
 //react and angular is client side routing in server side rotuing each time it will render a new html page
 
+
+//this is for lazyload this module this will be imported when  ever we call the path other wise it will not load
+//here this will suspend the code for the first time so we want to handle it
+const Instamart = lazy(() => import("./components/Instamart"))
 
 const Applayout = () => {
     return (
@@ -49,20 +57,31 @@ const appRouter = createBrowserRouter([
                 element: <Body />
             },
             {
-                path:"/about",
-                element:<AboutClass/>,
-                children:[{
-                    path:"profile",
-                    element:<Profile/>
+                path: "/about",
+                element: <AboutClass />,
+                children: [{
+                    path: "profile",
+                    element: <Profile />
                 }]
             },
             {
                 path: "/contact",
                 element: <Contact />
-            },{
+            }, {
                 //this is dynamic rourting because the is changing dynamically
-                path:"/restuarent/:id",
-                element:<RestaurentMenu></RestaurentMenu>
+                path: "/restuarent/:id",
+                element: <RestaurentMenu></RestaurentMenu>
+
+            },
+            {
+                //this is is a lazy loaded module
+                path: "/instamart",
+                element: <Suspense 
+                // fallback={
+                //     //this will help to show somthing that until the lazy loadaed module avalilable
+                // }
+                ><Instamart /></Suspense>
+
 
             }
         ]

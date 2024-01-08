@@ -15,9 +15,10 @@ const useOnline=()=>{
 
         //this is a browser event that check for whether it is online or ofline
         window.addEventListener('online',handleOnline)
+
         window.addEventListener('offline',handleOfline)
         return ()=>{
-            //this will remove the event listenre form the browser when we change the componet this is unmound methode ,it help to increase the performances      
+            //this will remove the event listener form the browser when we change the componet this is unmound methode ,it help to increase the performances      
             window.removeEventListener("online",handleOnline)
             window.removeEventListener('offline',handleOfline)
         }
