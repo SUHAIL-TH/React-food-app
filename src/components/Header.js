@@ -16,7 +16,7 @@ const Title = () => {
         
         <a href="/">
             
-        <img src="https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg" alt="logo gose here" className='logo'  />
+        <img src="https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg" alt="logo gose here" className='h-20'  />
         </a>
         
     )
@@ -28,18 +28,18 @@ const colorAA = {
 const HeaderComponent = () => {
     const[isLoggedIn,setIsLoggedIn]=useState(false )
     return (
-        <div style={colorAA} className='header'>
+        <div  className='flex  justify-between bg-black shadow-lg m-2'>
             <Title ></Title  >
             <div className='nav-items'>
-                <ul>
-                  <Link  to="/"><li >Home</li></Link>  
-                  <Link to="/about">  <li>About</li></Link>
-                   <Link to="/contact"><li>Contact</li></Link> 
-                   <Link to="/instamart"><li>InstaMart</li></Link>
-                    <li>cart</li>
+                <ul className="flex py-10 ">
+                  <Link  to="/"><li className="px-2 text-white font-bold ">Home</li></Link>  
+                  <Link to="/about">  <li className="px-2 text-white font-bold">About</li></Link>
+                   <Link to="/contact"><li className="px-2 text-white font-bold">Contact</li></Link> 
+                   <Link to="/instamart"><li className="px-2 text-white font-bold">InstaMart</li></Link>
+                    <li className="px-2 text-white font-bold">cart</li>
                 </ul>
             </div>
-            {isLoggedIn?   <button onClick={()=>setIsLoggedIn(false)}>LogOut</button>:  <button onClick={()=>setIsLoggedIn(true)}>LogIn</button>}
+            {isLoggedIn?   <button  onClick={()=>setIsLoggedIn(false)}>LogOut</button>:  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>setIsLoggedIn(true)}>LogIn</button>}
          
           
         </div>

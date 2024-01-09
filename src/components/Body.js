@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+ import { useEffect, useState } from 'react'
 import { restrautlist } from '../constant'
 import RestrauntCard from './Restruantcard'
 import { filterlist } from '../../utils/helper'
@@ -42,17 +42,18 @@ const Body = () => {
     }
     return (
         <>
-            <div className='search-container'>
-                <input type="text" onChange={(e) => {
+            <div className='search-container p-5 my-2 '>
+                <input type="text"  onChange={(e) => {
                     setSearchtext(e.target.value)
-                }} className='search' placeholder='Search' value={searchText} />
-                <button className='search-button' onClick={() => {
+                }} className='focus:bg-green-200 border-r-neutral-900' placeholder='Search' value={searchText} />
+                
+                <button className='p-1 m-1 text-white  text-sm bg-purple-800 rounded-md' onClick={() => {
                     //update the restuarent data
                     const data = filterlist(searchText, allrestuarent)
                     setFilterrestuarent(data)
                 }}>search</button>
             </div>
-            <div className='cardbody'>
+            <div className='flex flex-wrap '>
                 {fileterRestuarent.map((data) => {
                     return <RestrauntCard key={data.id} datalist={data} hello="card data has passed here" />
                 })}

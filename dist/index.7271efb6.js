@@ -27339,7 +27339,7 @@ const Title = ()=>{
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
             src: "https://static.vecteezy.com/system/resources/previews/005/085/502/non_2x/burger-logo-free-vector.jpg",
             alt: "logo gose here",
-            className: "logo"
+            className: "h-20"
         }, void 0, false, {
             fileName: "src/components/Header.js",
             lineNumber: 19,
@@ -27360,8 +27360,7 @@ const HeaderComponent = ()=>{
     _s();
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: colorAA,
-        className: "header",
+        className: "flex  justify-between bg-black shadow-lg m-2",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/components/Header.js",
@@ -27371,10 +27370,12 @@ const HeaderComponent = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-items",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex py-10 ",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-2 text-white font-bold ",
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
@@ -27391,6 +27392,7 @@ const HeaderComponent = ()=>{
                             children: [
                                 "  ",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "px-2 text-white font-bold",
                                     children: "About"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
@@ -27406,6 +27408,7 @@ const HeaderComponent = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/contact",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-2 text-white font-bold",
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
@@ -27420,6 +27423,7 @@ const HeaderComponent = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/instamart",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-2 text-white font-bold",
                                 children: "InstaMart"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
@@ -27432,6 +27436,7 @@ const HeaderComponent = ()=>{
                             columnNumber: 20
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-2 text-white font-bold",
                             children: "cart"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
@@ -27457,12 +27462,13 @@ const HeaderComponent = ()=>{
                 lineNumber: 42,
                 columnNumber: 28
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
                 onClick: ()=>setIsLoggedIn(true),
                 children: "LogIn"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
                 lineNumber: 42,
-                columnNumber: 89
+                columnNumber: 90
             }, undefined)
         ]
     }, void 0, true, {
@@ -34184,14 +34190,14 @@ const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container",
+                className: "search-container p-5 my-2 ",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
                         onChange: (e)=>{
                             setSearchtext(e.target.value);
                         },
-                        className: "search",
+                        className: "focus:bg-green-200 border-r-neutral-900",
                         placeholder: "Search",
                         value: searchText
                     }, void 0, false, {
@@ -34200,7 +34206,7 @@ const Body = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "search-button",
+                        className: "p-1 m-1 text-white  text-sm bg-purple-800 rounded-md",
                         onClick: ()=>{
                             //update the restuarent data
                             const data = (0, _helper.filterlist)(searchText, allrestuarent);
@@ -34209,7 +34215,7 @@ const Body = ()=>{
                         children: "search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, undefined)
                 ]
@@ -34219,20 +34225,20 @@ const Body = ()=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "cardbody",
+                className: "flex flex-wrap ",
                 children: fileterRestuarent.map((data)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restruantcardDefault.default), {
                         datalist: data,
                         hello: "card data has passed here"
                     }, data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 28
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 13
             }, undefined)
         ]
@@ -34310,20 +34316,19 @@ const RestrauntCard = (props)=>{
     // console.log(props);
     const { image, name, cusines, rating } = props.datalist;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "card",
+        className: "w-56 p-2 m-2 bg-slate-200",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: image,
-                alt: ""
+                alt: "",
+                className: ""
             }, void 0, false, {
                 fileName: "src/components/Restruantcard.js",
                 lineNumber: 7,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                style: {
-                    fontFamily: ""
-                },
+                className: "font-bold",
                 children: name
             }, void 0, false, {
                 fileName: "src/components/Restruantcard.js",
