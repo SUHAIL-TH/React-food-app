@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useState,useContext } from 'react'
 import ReactDom from 'react-dom/client'
 import HeaderComponent from './components/Header'
 import Body from './components/Body'
@@ -12,7 +12,7 @@ import Profile from './components/Profile'
 //import createbrowser router from react router dom for routing
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 // import Instamart from './components/Instamart'
-
+import UserContext from '../utils/UserContext'
 
 
 //basic way to create a react element
@@ -35,12 +35,20 @@ const heading = React.createElement(
 const Instamart = lazy(() => import("./components/Instamart"))
 
 const Applayout = () => {
+    let [userData,setUserData]=useState({
+        name:"ar",
+        email:"ajmal@gmail.com"
+    })
+    
     return (
         <>
+        <UserContext.Provider value={{user:userData}}>
+
             <HeaderComponent />
             {/* <Body /> */}
             <Outlet></Outlet>
             <Footer />
+        </UserContext.Provider>
         </>
 
     )
@@ -54,7 +62,10 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body />
+                element: <Body  user={{
+                    name:"ajmal",
+                    email:"ajmal@gmail.com"
+                }}/>
             },
             {
                 path: "/about",

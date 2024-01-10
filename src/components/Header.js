@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import UserContext from "../../utils/UserContext"
 
 //import image from a folder
 // import Logo from '../assets/img/'
@@ -27,8 +28,10 @@ const colorAA = {
 }
 const HeaderComponent = () => {
     const[isLoggedIn,setIsLoggedIn]=useState(false )
+    const {user}=useContext(UserContext)
+    console.log(user)
     return (
-        <div  className='flex  justify-between bg-black shadow-lg m-2'>
+        <div  className='flex  justify-between  bg-black shadow-lg m-2'>
             <Title ></Title  >
             <div className='nav-items'>
                 <ul className="flex py-10 ">
@@ -36,9 +39,10 @@ const HeaderComponent = () => {
                   <Link to="/about">  <li className="px-2 text-white font-bold">About</li></Link>
                    <Link to="/contact"><li className="px-2 text-white font-bold">Contact</li></Link> 
                    <Link to="/instamart"><li className="px-2 text-white font-bold">InstaMart</li></Link>
-                    <li className="px-2 text-white font-bold">cart</li>
+                    <li className="px-2 text-white-900 font-bold">cart</li>
                 </ul>
             </div>
+             <h2 className="text-white ">{user.name}</h2>
             {isLoggedIn?   <button  onClick={()=>setIsLoggedIn(false)}>LogOut</button>:  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>setIsLoggedIn(true)}>LogIn</button>}
          
           

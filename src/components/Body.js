@@ -7,7 +7,8 @@ import { filterlist } from '../../utils/helper'
 import useOnline from '../../utils/useOnline'
 
 
-const Body = () => {
+const Body = ({user}) => {
+   
     const serchTxt = "kfc"
     const [searchText, setSearchtext] = useState("")
     const [allrestuarent, allsetRestuarant] = useState(restrautlist)
@@ -55,7 +56,7 @@ const Body = () => {
             </div>
             <div className='flex flex-wrap '>
                 {fileterRestuarent.map((data) => {
-                    return <RestrauntCard key={data.id} datalist={data} hello="card data has passed here" />
+                    return <RestrauntCard key={data.id} datalist={data} user={user} hello="card data has passed here" />
                 })}
             </div>
         </>
