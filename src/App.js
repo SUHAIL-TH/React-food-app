@@ -13,7 +13,8 @@ import Profile from './components/Profile'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 // import Instamart from './components/Instamart'
 import UserContext from '../utils/UserContext'
-
+import { Provider } from 'react-redux'
+import store from '../utils/store'
 
 //basic way to create a react element
 //outlet===the childern will go to the outlet according to  the route 
@@ -41,7 +42,8 @@ const Applayout = () => {
     })
     
     return (
-        <>
+        //this provider help to provide store to the all componet in our react application
+        <Provider store={store}>
         <UserContext.Provider value={{user:userData}}>
 
             <HeaderComponent />
@@ -49,7 +51,7 @@ const Applayout = () => {
             <Outlet></Outlet>
             <Footer />
         </UserContext.Provider>
-        </>
+        </Provider>
 
     )
 }
