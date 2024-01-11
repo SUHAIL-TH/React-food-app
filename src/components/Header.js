@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
 import UserContext from "../../utils/UserContext"
+import { useSelector } from "react-redux"
 
 //import image from a folder
 // import Logo from '../assets/img/'
@@ -29,7 +30,9 @@ const colorAA = {
 const HeaderComponent = () => {
     const[isLoggedIn,setIsLoggedIn]=useState(false )
     const {user}=useContext(UserContext)
-    console.log(user)
+    // console.log(user)
+    const cartItems=useSelector(store=>store.cart.items)
+    console.log(cartItems)
     return (
         <div  className='flex  justify-between  bg-black shadow-lg m-2'>
             <Title ></Title  >
@@ -39,7 +42,7 @@ const HeaderComponent = () => {
                   <Link to="/about">  <li className="px-2 text-white font-bold">About</li></Link>
                    <Link to="/contact"><li className="px-2 text-white font-bold">Contact</li></Link> 
                    <Link to="/instamart"><li className="px-2 text-white font-bold">InstaMart</li></Link>
-                    <li className="px-2 text-white-900 font-bold">cart</li>
+                   <Link to="/cart"><li className="px-2 text-white   font-bold">cart -{cartItems.length} items</li></Link> 
                 </ul>
             </div>
              <h2 className="text-white ">{user.name}</h2>

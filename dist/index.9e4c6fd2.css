@@ -297,6 +297,11 @@ img, video {
   border-radius: .375rem;
 }
 
+.rounded-t-sm {
+  border-top-left-radius: .125rem;
+  border-top-right-radius: .125rem;
+}
+
 .border {
   border-width: 1px;
 }

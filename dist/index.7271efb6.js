@@ -27358,6 +27358,7 @@ var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _userContext = require("../../utils/UserContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 //import image from a folder
 // import Logo from '../assets/img/'
@@ -27376,12 +27377,12 @@ const Title = ()=>{
             className: "h-20"
         }, void 0, false, {
             fileName: "src/components/Header.js",
-            lineNumber: 20,
+            lineNumber: 21,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Header.js",
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 9
     }, undefined));
 };
@@ -27394,13 +27395,15 @@ const HeaderComponent = ()=>{
     _s();
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const { user } = (0, _react.useContext)((0, _userContextDefault.default));
-    console.log(user);
+    // console.log(user)
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    console.log(cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex  justify-between  bg-black shadow-lg m-2",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 35,
+                lineNumber: 38,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27415,12 +27418,12 @@ const HeaderComponent = ()=>{
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 38,
+                                lineNumber: 41,
                                 columnNumber: 33
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 38,
+                            lineNumber: 41,
                             columnNumber: 19
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27432,13 +27435,13 @@ const HeaderComponent = ()=>{
                                     children: "About"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 39,
+                                    lineNumber: 42,
                                     columnNumber: 39
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 39,
+                            lineNumber: 42,
                             columnNumber: 19
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27448,12 +27451,12 @@ const HeaderComponent = ()=>{
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 40,
+                                lineNumber: 43,
                                 columnNumber: 40
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 40,
+                            lineNumber: 43,
                             columnNumber: 20
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27463,31 +27466,42 @@ const HeaderComponent = ()=>{
                                 children: "InstaMart"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 41,
+                                lineNumber: 44,
                                 columnNumber: 42
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 41,
+                            lineNumber: 44,
                             columnNumber: 20
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "px-2 text-white-900 font-bold",
-                            children: "cart"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/cart",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-2 text-white   font-bold",
+                                children: [
+                                    "cart -",
+                                    cartItems.length,
+                                    " items"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 45,
+                                columnNumber: 37
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 42,
-                            columnNumber: 21
+                            lineNumber: 45,
+                            columnNumber: 20
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 37,
+                    lineNumber: 40,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 36,
+                lineNumber: 39,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -27495,7 +27509,7 @@ const HeaderComponent = ()=>{
                 children: user.name
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 45,
+                lineNumber: 48,
                 columnNumber: 14
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27503,7 +27517,7 @@ const HeaderComponent = ()=>{
                 children: "LogOut"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 46,
+                lineNumber: 49,
                 columnNumber: 28
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
@@ -27511,17 +27525,21 @@ const HeaderComponent = ()=>{
                 children: "LogIn"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 46,
+                lineNumber: 49,
                 columnNumber: 90
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 34,
+        lineNumber: 37,
         columnNumber: 9
     }, undefined);
 };
-_s(HeaderComponent, "NzLkGyMf6fISoEId6Bin+f/YvCY=");
+_s(HeaderComponent, "Yb3FpIXdPVv9/kpzCX+D4UXBMDA=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
 _c1 = HeaderComponent;
 exports.default = HeaderComponent; // import React from 'react'
  // export default function Title() {
@@ -27539,7 +27557,7 @@ $RefreshReg$(_c1, "HeaderComponent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/UserContext":"7To3X"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/UserContext":"7To3X","react-redux":"62sf7"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.21.1
  *
@@ -34198,891 +34216,7 @@ exports.default = UserContext;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8yaV8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0606.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _constant = require("../constant");
-var _restruantcard = require("./Restruantcard");
-var _restruantcardDefault = parcelHelpers.interopDefault(_restruantcard);
-var _helper = require("../../utils/helper");
-//filtering function for the list
-var _useOnline = require("../../utils/useOnline");
-var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
-var _s = $RefreshSig$();
-const Body = ({ user })=>{
-    _s();
-    const serchTxt = "kfc";
-    const [searchText, setSearchtext] = (0, _react.useState)("");
-    const [allrestuarent, allsetRestuarant] = (0, _react.useState)((0, _constant.restrautlist));
-    const [fileterRestuarent, setFilterrestuarent] = (0, _react.useState)((0, _constant.restrautlist));
-    //this hook is used to perfrom side effet 
-    //this hook will called  when the component it renderes
-    //this take two propreties one is the call back fucntion other is the dependecies array 
-    //dependencies array help understand in which the useeffect should be depend on
-    (0, _react.useEffect)(()=>{
-        console.log("jooo");
-    // geRestuareants()
-    }, []) //if give we somthing inside the depedency array this use Effect will render when ever a change in this dependecny array has occured
-    ;
-    /////this is used to make the api call in side the useEffect
-    // async function geRestuareants(){
-    //     console.log("hii suhail")
-    //     const data=await fetch("https://www.swiggy.com/dapi/restaurants/List/v5?lat=12.9351929&lng=77.62448069999999&page_typr=DESKTOP_WEB_LISTING")
-    //     const json=await data.json()
-    //     console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
-    // }
-    const offline = (0, _useOnlineDefault.default)();
-    console.log(offline);
-    let da = true;
-    //this help to check for wheter we are online or ofline
-    if (!da) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-        style: {
-            color: "red"
-        },
-        children: "\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1please check your internet  connection\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1"
-    }, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 42,
-        columnNumber: 15
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container p-5 my-2 ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        onChange: (e)=>{
-                            setSearchtext(e.target.value);
-                        },
-                        className: "focus:bg-green-200 border-r-neutral-900",
-                        placeholder: "Search",
-                        value: searchText
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 47,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-1 m-1 text-white  text-sm bg-purple-800 rounded-md",
-                        onClick: ()=>{
-                            //update the restuarent data
-                            const data = (0, _helper.filterlist)(searchText, allrestuarent);
-                            setFilterrestuarent(data);
-                        },
-                        children: "search"
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 51,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Body.js",
-                lineNumber: 46,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-wrap ",
-                children: fileterRestuarent.map((data)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restruantcardDefault.default), {
-                        datalist: data,
-                        user: user,
-                        hello: "card data has passed here"
-                    }, data.id, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 59,
-                        columnNumber: 28
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/components/Body.js",
-                lineNumber: 57,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "bl8pXVQett3nZwBXMTb+Qzdl/rQ=", false, function() {
-    return [
-        (0, _useOnlineDefault.default)
-    ];
-});
-_c = Body;
-exports.default = Body;
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$0606.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","../../utils/helper":"9L4Sx","../../utils/useOnline":"bc9W5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jVIFP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "restrautlist", ()=>restrautlist);
-const restrautlist = [
-    {
-        image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
-        name: "Burger king",
-        cusines: [
-            "Burger",
-            "Americans"
-        ],
-        rating: "4.3",
-        id: 1,
-        place: "Bangalore"
-    },
-    {
-        image: "https://www.searchhyderabad.com/wp-content/uploads/2022/07/KFC-Bangalore-Address.jpg",
-        name: "KFC",
-        cusines: [
-            "kfc",
-            "Americans",
-            "cons",
-            "grilled"
-        ],
-        rating: "4.3",
-        id: 2,
-        place: "kannur"
-    },
-    {
-        image: "https://b.zmtcdn.com/data/pictures/1/19499081/6552ee7f14a55b30df14c797726470b0.jpg",
-        name: "Nahdi mandi",
-        cusines: [
-            "mandi",
-            "bangalore",
-            "kannur"
-        ],
-        rating: "4.3",
-        id: 3,
-        place: "calicut "
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6zJBc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9e95 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9e95.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const RestrauntCard = (props)=>{
-    console.log(props);
-    const { image, name, cusines, rating } = props.datalist;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-56 p-2 m-2 bg-slate-200",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: image,
-                alt: "",
-                className: ""
-            }, void 0, false, {
-                fileName: "src/components/Restruantcard.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "font-bold",
-                children: name
-            }, void 0, false, {
-                fileName: "src/components/Restruantcard.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                children: cusines?.join(",")
-            }, void 0, false, {
-                fileName: "src/components/Restruantcard.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                children: rating
-            }, void 0, false, {
-                fileName: "src/components/Restruantcard.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                children: props.user.name
-            }, void 0, false, {
-                fileName: "src/components/Restruantcard.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Restruantcard.js",
-        lineNumber: 7,
-        columnNumber: 9
-    }, undefined);
-};
-_c = RestrauntCard;
-//this is used for the default export
-exports.default = RestrauntCard;
-var _c;
-$RefreshReg$(_c, "RestrauntCard");
-
-  $parcel$ReactRefreshHelpers$9e95.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9L4Sx":[function(require,module,exports) {
-//this is the place where we used to make the code that used several time
-//this make our code more redable,testable
-//this make our code more maintanab le
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "filterlist", ()=>filterlist);
-var _constant = require("../src/constant");
-function filterlist(searchtext, list) {
-    if (searchtext === "") return 0, _constant.restrautlist;
-    else return list.filter((data)=>data?.name.toLowerCase().includes(searchtext.toLowerCase()));
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../src/constant":"jVIFP"}],"bc9W5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9de7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9de7.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _s = $RefreshSig$();
-const useOnline = ()=>{
-    _s();
-    const [isOnline, setIsOnline] = (0, _react.useState)(true);
-    (0, _react.useEffect)(()=>{
-        const handleOnline = ()=>{
-            //if i go online then setthe stataus as true
-            setIsOnline(true);
-        };
-        const handleOfline = ()=>{
-            setIsOnline(false);
-        };
-        //this code will run onces when we load the 
-        //this is a browser event that check for whether it is online or ofline
-        window.addEventListener("online", handleOnline);
-        window.addEventListener("offline", handleOfline);
-        return ()=>{
-            //this will remove the event listener form the browser when we change the componet this is unmound methode ,it help to increase the performances      
-            window.removeEventListener("online", handleOnline);
-            window.removeEventListener("offline", handleOfline);
-        };
-    }, []);
-    return isOnline //return the status whether it is online or ofline
-    ;
-};
-_s(useOnline, "tQ+jeuTfaQWyt2cny0PnlZvq2jE=");
-exports.default = useOnline;
-
-  $parcel$ReactRefreshHelpers$9de7.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc7c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
-        children: "footer"
-    }, void 0, false, {
-        fileName: "src/components/Footer.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _header = require("./Header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-var _reactRouterDom = require("react-router-dom");
-var _profile = require("./Profile");
-var _profileDefault = parcelHelpers.interopDefault(_profile);
-var _profileClass = require("./ProfileClass");
-var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-// const About =()=>{
-//     return (
-//         <div>
-//             {/* <HeaderComponent></HeaderComponent> */}
-//             <h1 style={{margin:"10px"}}>About us PAGE</h1>
-//             <p style={{margin:"10px"}}>This  is the food card displaying app contain all about the food</p>
-//             {/* <Outlet></Outlet> */}
-//             <ProfileFunction name={"my name is ajmal"}></ProfileFunction>
-//             <ProfileClass age={"my age is 28"}></ProfileClass>
-//         </div>
-//     )
-// }
-//this is the way to create class based about component
-class AboutClass extends (0, _reactDefault.default).Component {
-    constructor(props){
-        super(props);
-    }
-    componentDidMount() {
-        //this is the best place to make an api call be this is called after render function
-        console.log("compoent didMount");
-    }
-    render() {
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    style: {
-                        margin: "10px"
-                    },
-                    children: "About us PAGE"
-                }, void 0, false, {
-                    fileName: "src/components/About.js",
-                    lineNumber: 31,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    style: {
-                        margin: "10px"
-                    },
-                    children: "This  is the food card displaying app contain all about the food"
-                }, void 0, false, {
-                    fileName: "src/components/About.js",
-                    lineNumber: 32,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
-                    name: "my name is ajmal"
-                }, void 0, false, {
-                    fileName: "src/components/About.js",
-                    lineNumber: 34,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                    age: "my age is 28"
-                }, void 0, false, {
-                    fileName: "src/components/About.js",
-                    lineNumber: 35,
-                    columnNumber: 13
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/About.js",
-            lineNumber: 29,
-            columnNumber: 13
-        }, this);
-    }
-}
-// export default About
-exports.default = AboutClass;
-
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./Header":"hsJbF","react-router-dom":"9xmpe","./Profile":"h0rtF","./ProfileClass":"aeEz8","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b52a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$();
-//useState hook is used to create a state in function componet
-const Profile = (props)=>{
-    _s();
-    const [count, setCount] = (0, _react.useState)(0);
-    (0, _react.useEffect)(()=>{
-    //USE effect is used to make api call
-    //this is called after the render function has worked then useeffect is worked
-    });
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "profile component"
-            }, void 0, false, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 15,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                children: props.name
-            }, void 0, false, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 16,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    "Count:",
-                    count
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 17,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>setCount(count + 1),
-                children: "click"
-            }, void 0, false, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Profile, "f6rNyXb4nKr8df0VUP2jADfsx6o=");
-_c = Profile;
-exports.default = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$b52a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1beb.prelude(module);
-
-try {
-//this is the way to create class componet here the render methode is import thing wiht out 
-//this wont work and it will return somthing
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-class Profile extends (0, _reactDefault.default).Component {
-    constructor(props){
-        super(props);
-        //create state  ===in class compoent we create state inisde the constructor
-        //becaues this is called first when the class component is called because constructori  is called first
-        this.state = {
-            count: 0,
-            count2: 0
-        };
-    }
-    //impt
-    //every time a componetn is render mouting will happend 
-    //if the componet does not have a state then update will not work
-    //if we leave the component then only the umouting happen
-    componentDidMount() {
-        //this is life cyle methode this will called after the componet render has called
-        //this is the best place to make an api call
-        //this componentDidMount  can be make async
-        console.log("jii");
-    }
-    //component did Update
-    componentDidUpdate(prevProps, prevState) {
-        //this will called after every render of the component
-        //this will we called when ever the state change or any update has made then this will be called after the rendering
-        this.state.count, prevState.count;
-    }
-    componentWillUnmount() {
-    //this is used for clean up inorder to ovoid unnessary thing running in the componet after we leave this
-    //this life cycle will be called when we exit form the componet or leave the componet
-    }
-    //redender function is most important thing in class compoent with out this wount wrk
-    render() {
-        //we call also destructor it useing 
-        let { count } = this.state //this count can be used here it is destructor
-        ;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "hello class component"
-                }, void 0, false, {
-                    fileName: "src/components/ProfileClass.js",
-                    lineNumber: 47,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                    children: this.props.age
-                }, void 0, false, {
-                    fileName: "src/components/ProfileClass.js",
-                    lineNumber: 48,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
-                    children: [
-                        "state in count:",
-                        this.state.count
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/ProfileClass.js",
-                    lineNumber: 49,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        this.setState({
-                            count: this.state.count + 1
-                        });
-                    },
-                    children: "Add"
-                }, void 0, false, {
-                    fileName: "src/components/ProfileClass.js",
-                    lineNumber: 50,
-                    columnNumber: 13
-                }, this)
-            ]
-        }, void 0, true);
-    }
-}
-exports.default = Profile;
-
-  $parcel$ReactRefreshHelpers$1beb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0ba4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const Error = ()=>{
-    _s();
-    let err = (0, _reactRouterDom.useRouteError)();
-    console.log(err);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                style: {
-                    display: "flex",
-                    justifyContent: "center",
-                    fontFamily: "monospace",
-                    fontWeight: "bolder",
-                    color: "red"
-                },
-                children: "Opps"
-            }, void 0, false, {
-                fileName: "src/components/Error.js",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                style: {
-                    display: "flex",
-                    justifyContent: "center"
-                },
-                children: "Page not found......"
-            }, void 0, false, {
-                fileName: "src/components/Error.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                style: {
-                    display: "flex",
-                    justifyContent: "center"
-                },
-                children: "somthing went wrong....404 Erro!!"
-            }, void 0, false, {
-                fileName: "src/components/Error.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Error.js",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
-    return [
-        (0, _reactRouterDom.useRouteError)
-    ];
-});
-_c = Error;
-exports.default = Error;
-var _c;
-$RefreshReg$(_c, "Error");
-
-  $parcel$ReactRefreshHelpers$0ba4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ee46.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "contact us page"
-    }, void 0, false, {
-        fileName: "src/components/Contact.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$ee46.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6hYlm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$12a9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$12a9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _useRestuarent = require("../../utils/useRestuarent");
-var _useRestuarentDefault = parcelHelpers.interopDefault(_useRestuarent);
-var _s = $RefreshSig$();
-const RestaurentMenu = ()=>{
-    _s();
-    const params = (0, _reactRouterDom.useParams)();
-    console.log(params);
-    //this is the way use custome hook to get the data formt the api for 
-    //                 -  the custome rendering
-    let data = (0, _useRestuarentDefault.default)(params);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: [
-                    "Resturent id:",
-                    params.id
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestuarentMenu.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Jumana"
-            }, void 0, false, {
-                fileName: "src/components/RestuarentMenu.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/RestuarentMenu.js",
-        lineNumber: 10,
-        columnNumber: 9
-    }, undefined);
-};
-_s(RestaurentMenu, "bDOs6PEj221tVLivBziDwgS0cAE=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams),
-        (0, _useRestuarentDefault.default)
-    ];
-});
-_c = RestaurentMenu;
-exports.default = RestaurentMenu;
-var _c;
-$RefreshReg$(_c, "RestaurentMenu");
-
-  $parcel$ReactRefreshHelpers$12a9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../../utils/useRestuarent":"c7zmd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"c7zmd":[function(require,module,exports) {
-//this is way the create a cutsom hook we can resuse it
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _s = $RefreshSig$();
-const useRestaurent = (resId)=>{
-    _s();
-    //want to create a state to get the data
-    const [resData, setResData] = useState();
-    //GET DATA FROM API
-    useEffect(()=>{
-        getRestaruentData();
-    }, []);
-    async function getRestaruentData() {
-        let Data = await fetch("http");
-        const jsData = await Data.json();
-        setResData(jsData);
-    }
-    //reurn restruarnt data
-    return resData;
-//THIS is returning the state
-};
-_s(useRestaurent, "xNOhxTLSY+sOz+9nt6aZKiIOoB4=");
-exports.default = useRestaurent;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"coKsA":[function(require,module,exports) {
-module.exports = require("f66b76e1a0fab8e2")(require("589bfdc9a396c63c").getBundleURL("aXMci") + "Instamart.0762395e.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("gB4Fs"));
-
-},{"f66b76e1a0fab8e2":"9Xl4o","589bfdc9a396c63c":"5wvPl"}],"9Xl4o":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("338614df64bca7c5");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"338614df64bca7c5":"jthHs"}],"jthHs":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"5wvPl":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"62sf7":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"62sf7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Provider", ()=>Provider_default);
@@ -36147,21 +35281,356 @@ module.exports = require("374a059340689e89");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"8b38fc6c74f16e20":"21dqq"}],"hkUX0":[function(require,module,exports) {
+},{"8b38fc6c74f16e20":"21dqq"}],"8yaV8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0606.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _constant = require("../constant");
+var _restruantcard = require("./Restruantcard");
+var _restruantcardDefault = parcelHelpers.interopDefault(_restruantcard);
+var _helper = require("../../utils/helper");
+//filtering function for the list
+var _cartSlice = require("../../utils/cartSlice");
+var _useOnline = require("../../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
+const Body = ({ user })=>{
+    _s();
+    const serchTxt = "kfc";
+    const [searchText, setSearchtext] = (0, _react.useState)("");
+    const [allrestuarent, allsetRestuarant] = (0, _react.useState)((0, _constant.restrautlist));
+    const [fileterRestuarent, setFilterrestuarent] = (0, _react.useState)((0, _constant.restrautlist));
+    //this hook is used to perfrom side effet 
+    //this hook will called  when the component it renderes
+    //this take two propreties one is the call back fucntion other is the dependecies array 
+    //dependencies array help understand in which the useeffect should be depend on
+    (0, _react.useEffect)(()=>{
+        console.log("jooo");
+    // geRestuareants()
+    }, []) //if give we somthing inside the depedency array this use Effect will render when ever a change in this dependecny array has occured
+    ;
+    /////this is used to make the api call in side the useEffect
+    // async function geRestuareants(){
+    //     console.log("hii suhail")
+    //     const data=await fetch("https://www.swiggy.com/dapi/restaurants/List/v5?lat=12.9351929&lng=77.62448069999999&page_typr=DESKTOP_WEB_LISTING")
+    //     const json=await data.json()
+    //     console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
+    // }
+    const offline = (0, _useOnlineDefault.default)();
+    // console.log(offline)
+    let da = true;
+    //this help to check for wheter we are online or ofline
+    if (!da) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+        style: {
+            color: "red"
+        },
+        children: "\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1please check your internet  connection\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1\uD83D\uDED1"
+    }, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 44,
+        columnNumber: 15
+    }, undefined);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleaddItem = ()=>{
+        dispatch((0, _cartSlice.addItem)("graphes"));
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container p-5 my-2 ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        onChange: (e)=>{
+                            setSearchtext(e.target.value);
+                        },
+                        className: "focus:bg-green-200 border-r-neutral-900",
+                        placeholder: "Search",
+                        value: searchText
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 53,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "p-1 m-1 text-white  text-sm bg-purple-800 rounded-md",
+                        onClick: ()=>{
+                            //update the restuarent data
+                            const data = (0, _helper.filterlist)(searchText, allrestuarent);
+                            setFilterrestuarent(data);
+                        },
+                        children: "search"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 57,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: ()=>handleaddItem(),
+                        className: "bg-black text-white border border-black rounded-t-sm p-2 m-2",
+                        children: "Add item to cart"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 62,
+                        columnNumber: 18
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Body.js",
+                lineNumber: 52,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-wrap ",
+                children: fileterRestuarent.map((data)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restruantcardDefault.default), {
+                        datalist: data,
+                        user: user,
+                        hello: "card data has passed here"
+                    }, data.id, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 66,
+                        columnNumber: 28
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 64,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "E6Bdj+LRFjZpjq/nkKX2bKrIE4I=", false, function() {
+    return [
+        (0, _useOnlineDefault.default),
+        (0, _reactRedux.useDispatch)
+    ];
+});
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$0606.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constant":"jVIFP","./Restruantcard":"6zJBc","../../utils/helper":"9L4Sx","../../utils/useOnline":"bc9W5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/cartSlice":"1D8lC","react-redux":"62sf7"}],"jVIFP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "restrautlist", ()=>restrautlist);
+const restrautlist = [
+    {
+        image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/05/Double-Cheeseburger-square-FS-42.jpg",
+        name: "Burger king",
+        cusines: [
+            "Burger",
+            "Americans"
+        ],
+        rating: "4.3",
+        id: 1,
+        place: "Bangalore"
+    },
+    {
+        image: "https://www.searchhyderabad.com/wp-content/uploads/2022/07/KFC-Bangalore-Address.jpg",
+        name: "KFC",
+        cusines: [
+            "kfc",
+            "Americans",
+            "cons",
+            "grilled"
+        ],
+        rating: "4.3",
+        id: 2,
+        place: "kannur"
+    },
+    {
+        image: "https://b.zmtcdn.com/data/pictures/1/19499081/6552ee7f14a55b30df14c797726470b0.jpg",
+        name: "Nahdi mandi",
+        cusines: [
+            "mandi",
+            "bangalore",
+            "kannur"
+        ],
+        rating: "4.3",
+        id: 3,
+        place: "calicut "
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6zJBc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9e95 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9e95.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const RestrauntCard = (props)=>{
+    console.log(props);
+    const { image, name, cusines, rating } = props.datalist;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-56 p-2 m-2 bg-slate-200",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: image,
+                alt: "",
+                className: ""
+            }, void 0, false, {
+                fileName: "src/components/Restruantcard.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold",
+                children: name
+            }, void 0, false, {
+                fileName: "src/components/Restruantcard.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                children: cusines?.join(",")
+            }, void 0, false, {
+                fileName: "src/components/Restruantcard.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                children: rating
+            }, void 0, false, {
+                fileName: "src/components/Restruantcard.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                children: props.user.name
+            }, void 0, false, {
+                fileName: "src/components/Restruantcard.js",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Restruantcard.js",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
+};
+_c = RestrauntCard;
+//this is used for the default export
+exports.default = RestrauntCard;
+var _c;
+$RefreshReg$(_c, "RestrauntCard");
+
+  $parcel$ReactRefreshHelpers$9e95.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9L4Sx":[function(require,module,exports) {
+//this is the place where we used to make the code that used several time
+//this make our code more redable,testable
+//this make our code more maintanab le
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterlist", ()=>filterlist);
+var _constant = require("../src/constant");
+function filterlist(searchtext, list) {
+    if (searchtext === "") return 0, _constant.restrautlist;
+    else return list.filter((data)=>data?.name.toLowerCase().includes(searchtext.toLowerCase()));
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../src/constant":"jVIFP"}],"bc9W5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9de7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9de7.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        const handleOnline = ()=>{
+            //if i go online then setthe stataus as true
+            setIsOnline(true);
+        };
+        const handleOfline = ()=>{
+            setIsOnline(false);
+        };
+        //this code will run onces when we load the 
+        //this is a browser event that check for whether it is online or ofline
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOfline);
+        return ()=>{
+            //this will remove the event listener form the browser when we change the componet this is unmound methode ,it help to increase the performances      
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOfline);
+        };
+    }, []);
+    return isOnline //return the status whether it is online or ofline
+    ;
+};
+_s(useOnline, "tQ+jeuTfaQWyt2cny0PnlZvq2jE=");
+exports.default = useOnline;
+
+  $parcel$ReactRefreshHelpers$9de7.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1D8lC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addItem", ()=>addItem);
+parcelHelpers.export(exports, "removeItem", ()=>removeItem);
+parcelHelpers.export(exports, "clearCart", ()=>clearCart);
 var _toolkit = require("@reduxjs/toolkit");
-var _cartSlice = require("./cartSlice");
-var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
-//this function is used to create a store this is came form raeact toolkit
-const store = (0, _toolkit.configureStore)({
-    n: {
-        cart: (0, _cartSliceDefault.default)
+const cartSlice = (0, _toolkit.createSlice)({
+    name: "cart",
+    //this is the inital state
+    initialState: {
+        items: [
+            "aa",
+            "bb"
+        ]
+    },
+    //reducers  is used to update the state
+    reducers: {
+        addItem: (state, action)=>{
+            state.items.push(action.payload);
+        },
+        removeItem: (state, action)=>{
+            state.items.pop();
+        },
+        clearCart: (state)=>{
+            state.items = [];
+        }
     }
 });
-exports.default = store;
+const { addItem, removeItem, clearCart } = cartSlice.actions;
+//this is way we export reducer
+exports.default = cartSlice.reducer;
 
-},{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cartSlice":"1D8lC"}],"fuua8":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fuua8":[function(require,module,exports) {
 // src/index.ts
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -40057,39 +39526,604 @@ function createThunkMiddleware(extraArgument) {
 var thunk = createThunkMiddleware();
 var withExtraArgument = createThunkMiddleware;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1D8lC":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8pPOA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc7c.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "addItem", ()=>addItem);
-parcelHelpers.export(exports, "removeItem", ()=>removeItem);
-parcelHelpers.export(exports, "clearCart", ()=>clearCart);
-var _toolkit = require("@reduxjs/toolkit");
-const cartSlice = (0, _toolkit.createSlice)({
-    name: "cart",
-    //this is the inital state
-    initialState: {
-        items: [
-            "aa",
-            "bb"
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+        children: "footer"
+    }, void 0, false, {
+        fileName: "src/components/Footer.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5b98.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _header = require("./Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _reactRouterDom = require("react-router-dom");
+var _profile = require("./Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _profileClass = require("./ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// const About =()=>{
+//     return (
+//         <div>
+//             {/* <HeaderComponent></HeaderComponent> */}
+//             <h1 style={{margin:"10px"}}>About us PAGE</h1>
+//             <p style={{margin:"10px"}}>This  is the food card displaying app contain all about the food</p>
+//             {/* <Outlet></Outlet> */}
+//             <ProfileFunction name={"my name is ajmal"}></ProfileFunction>
+//             <ProfileClass age={"my age is 28"}></ProfileClass>
+//         </div>
+//     )
+// }
+//this is the way to create class based about component
+class AboutClass extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+    }
+    componentDidMount() {
+        //this is the best place to make an api call be this is called after render function
+        console.log("compoent didMount");
+    }
+    render() {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    style: {
+                        margin: "10px"
+                    },
+                    children: "About us PAGE"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 33,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    style: {
+                        margin: "10px"
+                    },
+                    children: "This  is the food card displaying app contain all about the food"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 34,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                    name: "my name is ajmal"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 36,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                    age: "my age is 28"
+                }, void 0, false, {
+                    fileName: "src/components/About.js",
+                    lineNumber: 37,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/About.js",
+            lineNumber: 30,
+            columnNumber: 13
+        }, this);
+    }
+}
+// export default About
+exports.default = AboutClass;
+
+  $parcel$ReactRefreshHelpers$5b98.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./Header":"hsJbF","react-router-dom":"9xmpe","./Profile":"h0rtF","./ProfileClass":"aeEz8","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b52a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+//useState hook is used to create a state in function componet
+const Profile = (props)=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    (0, _react.useEffect)(()=>{
+    //USE effect is used to make api call
+    //this is called after the render function has worked then useeffect is worked
+    });
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "profile component"
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 15,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                children: props.name
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 16,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    "Count:",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 17,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setCount(count + 1),
+                children: "click"
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
         ]
-    },
-    //reducer is used to update the state
-    reducers: {
-        addItem: (state, action)=>{
-            state.items.push(action.payload);
-        },
-        removeItem: (state, action)=>{
-            state.items.pop();
-        },
-        clearCart: (state)=>{
-            state.items = [];
+    }, void 0, true);
+};
+_s(Profile, "f6rNyXb4nKr8df0VUP2jADfsx6o=");
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$b52a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1beb.prelude(module);
+
+try {
+//this is the way to create class componet here the render methode is import thing wiht out 
+//this wont work and it will return somthing
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Profile extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        //create state  ===in class compoent we create state inisde the constructor
+        //becaues this is called first when the class component is called because constructori  is called first
+        this.state = {
+            count: 0,
+            count2: 0
+        };
+    }
+    //impt
+    //every time a componetn is render mouting will happend 
+    //if the componet does not have a state then update will not work
+    //if we leave the component then only the umouting happen
+    componentDidMount() {
+        //this is life cyle methode this will called after the componet render has called
+        //this is the best place to make an api call
+        //this componentDidMount  can be make async
+        console.log("jii");
+    }
+    //component did Update
+    componentDidUpdate(prevProps, prevState) {
+        //this will called after every render of the component
+        //this will we called when ever the state change or any update has made then this will be called after the rendering
+        this.state.count, prevState.count;
+    }
+    componentWillUnmount() {
+    //this is used for clean up inorder to ovoid unnessary thing running in the componet after we leave this
+    //this life cycle will be called when we exit form the componet or leave the componet
+    }
+    //redender function is most important thing in class compoent with out this wount wrk
+    render() {
+        //we call also destructor it useing 
+        let { count } = this.state //this count can be used here it is destructor
+        ;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "hello class component"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 47,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                    children: this.props.age
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 48,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                    children: [
+                        "state in count:",
+                        this.state.count
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 49,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        this.setState({
+                            count: this.state.count + 1
+                        });
+                    },
+                    children: "Add"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 50,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true);
+    }
+}
+exports.default = Profile;
+
+  $parcel$ReactRefreshHelpers$1beb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0ba4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Error = ()=>{
+    _s();
+    let err = (0, _reactRouterDom.useRouteError)();
+    console.log(err);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                style: {
+                    display: "flex",
+                    justifyContent: "center",
+                    fontFamily: "monospace",
+                    fontWeight: "bolder",
+                    color: "red"
+                },
+                children: "Opps"
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                style: {
+                    display: "flex",
+                    justifyContent: "center"
+                },
+                children: "Page not found......"
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                style: {
+                    display: "flex",
+                    justifyContent: "center"
+                },
+                children: "somthing went wrong....404 Erro!!"
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Error.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
+    return [
+        (0, _reactRouterDom.useRouteError)
+    ];
+});
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$0ba4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ee46.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "contact us page"
+    }, void 0, false, {
+        fileName: "src/components/Contact.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$ee46.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6hYlm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$12a9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$12a9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _useRestuarent = require("../../utils/useRestuarent");
+var _useRestuarentDefault = parcelHelpers.interopDefault(_useRestuarent);
+var _s = $RefreshSig$();
+const RestaurentMenu = ()=>{
+    _s();
+    const params = (0, _reactRouterDom.useParams)();
+    console.log(params);
+    //this is the way use custome hook to get the data formt the api for 
+    //                 -  the custome rendering
+    let data = (0, _useRestuarentDefault.default)(params);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: [
+                    "Resturent id:",
+                    params.id
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarentMenu.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Jumana"
+            }, void 0, false, {
+                fileName: "src/components/RestuarentMenu.js",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestuarentMenu.js",
+        lineNumber: 10,
+        columnNumber: 9
+    }, undefined);
+};
+_s(RestaurentMenu, "bDOs6PEj221tVLivBziDwgS0cAE=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _useRestuarentDefault.default)
+    ];
+});
+_c = RestaurentMenu;
+exports.default = RestaurentMenu;
+var _c;
+$RefreshReg$(_c, "RestaurentMenu");
+
+  $parcel$ReactRefreshHelpers$12a9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../../utils/useRestuarent":"c7zmd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"c7zmd":[function(require,module,exports) {
+//this is way the create a cutsom hook we can resuse it
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _s = $RefreshSig$();
+const useRestaurent = (resId)=>{
+    _s();
+    //want to create a state to get the data
+    const [resData, setResData] = useState();
+    //GET DATA FROM API
+    useEffect(()=>{
+        getRestaruentData();
+    }, []);
+    async function getRestaruentData() {
+        let Data = await fetch("http");
+        const jsData = await Data.json();
+        setResData(jsData);
+    }
+    //reurn restruarnt data
+    return resData;
+//THIS is returning the state
+};
+_s(useRestaurent, "xNOhxTLSY+sOz+9nt6aZKiIOoB4=");
+exports.default = useRestaurent;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"coKsA":[function(require,module,exports) {
+module.exports = require("f66b76e1a0fab8e2")(require("589bfdc9a396c63c").getBundleURL("aXMci") + "Instamart.0762395e.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("gB4Fs"));
+
+},{"f66b76e1a0fab8e2":"9Xl4o","589bfdc9a396c63c":"5wvPl"}],"9Xl4o":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("338614df64bca7c5");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
         }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"338614df64bca7c5":"jthHs"}],"jthHs":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"5wvPl":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"hkUX0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _toolkit = require("@reduxjs/toolkit");
+var _cartSlice = require("./cartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+//this function is used to create a store this is came form raeact toolkit
+const store = (0, _toolkit.configureStore)({
+    reducer: {
+        cart: (0, _cartSliceDefault.default)
     }
 });
-const { addItem, removeItem, clearCart } = cartSlice.actions;
-//this is way we export reducer
-exports.default = cartSlice.reducer;
+exports.default = store;
 
-},{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
+},{"@reduxjs/toolkit":"fuua8","./cartSlice":"1D8lC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
 
 //# sourceMappingURL=index.7271efb6.js.map

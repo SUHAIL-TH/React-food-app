@@ -3,8 +3,10 @@ import { restrautlist } from '../constant'
 import RestrauntCard from './Restruantcard'
 import { filterlist } from '../../utils/helper'
 //filtering function for the list
+import { addItem } from '../../utils/cartSlice'
 
 import useOnline from '../../utils/useOnline'
+import { useDispatch } from 'react-redux'
 
 
 const Body = ({user}) => {
@@ -35,11 +37,15 @@ const Body = ({user}) => {
     //     setRestuarant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants )
     // }
     const offline=useOnline();
-    console.log(offline)
+    // console.log(offline)
     let da=true
     //this help to check for wheter we are online or ofline
     if(!da){
        return <h3 style={{color:"red"}}>🛑🛑🛑🛑🛑🛑🛑please check your internet  connection🛑🛑🛑🛑🛑🛑🛑🛑</h3>
+    }
+    const dispatch=useDispatch()
+    const handleaddItem=()=>{
+        dispatch(addItem("graphes"))
     }
     return (
         <>
@@ -53,6 +59,7 @@ const Body = ({user}) => {
                     const data = filterlist(searchText, allrestuarent)
                     setFilterrestuarent(data)
                 }}>search</button>
+                 <button onClick={()=>handleaddItem()} className="bg-black text-white border border-black rounded-t-sm p-2 m-2">Add item to cart</button>
             </div>
             <div className='flex flex-wrap '>
                 {fileterRestuarent.map((data) => {
