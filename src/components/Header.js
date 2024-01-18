@@ -42,6 +42,7 @@ const HeaderComponent = () => {
                   <Link to="/about">  <li className="px-2 text-white font-bold">About</li></Link>
                    <Link to="/contact"><li className="px-2 text-white font-bold">Contact</li></Link> 
                    <Link to="/instamart"><li className="px-2 text-white font-bold">InstaMart</li></Link>
+                   <Link to="/formpath"><li className="px-2 text-white font-bold">Form</li></Link>
                    <Link to="/cart"><li className="px-2 text-white   font-bold">cart -{cartItems.length} items</li></Link> 
                 </ul>
             </div>

@@ -15,6 +15,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import UserContext from '../utils/UserContext'
 import { Provider } from 'react-redux'
 import store from '../utils/store'
+import Form from './components/Form'
 
 //basic way to create a react element
 //outlet===the childern will go to the outlet according to  the route 
@@ -96,6 +97,9 @@ const appRouter = createBrowserRouter([
                 ><Instamart /></Suspense>
 
 
+            },{
+                path:"/formpath",
+                element:<Form/>
             }
         ]
 

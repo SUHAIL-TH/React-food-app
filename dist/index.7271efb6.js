@@ -2972,6 +2972,8 @@ var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _reactRedux = require("react-redux");
 var _store = require("../utils/store");
 var _storeDefault = parcelHelpers.interopDefault(_store);
+var _form = require("./components/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
 var _s = $RefreshSig$();
 //basic way to create a react element
 //outlet===the childern will go to the outlet according to  the route 
@@ -3002,28 +3004,28 @@ const Applayout = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 49,
+                    lineNumber: 50,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 51,
+                    lineNumber: 52,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 52,
+                    lineNumber: 53,
                     columnNumber: 13
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/App.js",
-            lineNumber: 47,
+            lineNumber: 48,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 9
     }, undefined));
 };
@@ -3034,13 +3036,13 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Applayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 61,
+            lineNumber: 62,
             columnNumber: 18
         }, undefined),
         //this will load the error page when the route we provided is invalid  
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 63,
+            lineNumber: 64,
             columnNumber: 23
         }, undefined),
         children: [
@@ -3053,7 +3055,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     }
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 67,
+                    lineNumber: 68,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3061,7 +3063,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 74,
+                    lineNumber: 75,
                     columnNumber: 26
                 }, undefined),
                 children: [
@@ -3069,7 +3071,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 30
                         }, undefined)
                     }
@@ -3079,7 +3081,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 82,
+                    lineNumber: 83,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3088,7 +3090,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restuarent/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarentMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 86,
+                    lineNumber: 87,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3098,13 +3100,21 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 96,
+                        lineNumber: 97,
                         columnNumber: 18
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 92,
+                    lineNumber: 93,
                     columnNumber: 26
+                }, undefined)
+            },
+            {
+                path: "/formpath",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 102,
+                    columnNumber: 25
                 }, undefined)
             }
         ]
@@ -3115,7 +3125,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 109,
+    lineNumber: 113,
     columnNumber: 13
 }, undefined)) // const config = [
  //     {
@@ -3157,7 +3167,7 @@ $RefreshReg$(_c1, "Applayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Error":"kvula","./components/Contact":"cgAOG","./components/RestuarentMenu":"6hYlm","./components/Profile":"h0rtF","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","45bbc3eb0b2df3bc":"coKsA","../utils/UserContext":"7To3X","react-redux":"62sf7","../utils/store":"hkUX0"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Error":"kvula","./components/Contact":"cgAOG","./components/RestuarentMenu":"6hYlm","./components/Profile":"h0rtF","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","45bbc3eb0b2df3bc":"coKsA","../utils/UserContext":"7To3X","react-redux":"62sf7","../utils/store":"hkUX0","./components/Form":"4Yvuo"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27475,6 +27485,21 @@ const HeaderComponent = ()=>{
                             columnNumber: 20
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/formpath",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-2 text-white font-bold",
+                                children: "Form"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 45,
+                                columnNumber: 41
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 45,
+                            columnNumber: 20
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/cart",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 className: "px-2 text-white   font-bold",
@@ -27485,12 +27510,12 @@ const HeaderComponent = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 45,
+                                lineNumber: 46,
                                 columnNumber: 37
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 20
                         }, undefined)
                     ]
@@ -27509,7 +27534,7 @@ const HeaderComponent = ()=>{
                 children: user.name
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 14
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27517,7 +27542,7 @@ const HeaderComponent = ()=>{
                 children: "LogOut"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 28
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
@@ -27525,7 +27550,7 @@ const HeaderComponent = ()=>{
                 children: "LogIn"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 90
             }, undefined)
         ]
@@ -40117,6 +40142,7 @@ var _toolkit = require("@reduxjs/toolkit");
 var _cartSlice = require("./cartSlice");
 var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
 //this function is used to create a store this is came form raeact toolkit
+//this is the thing we want to subscribe
 const store = (0, _toolkit.configureStore)({
     reducer: {
         cart: (0, _cartSliceDefault.default)
@@ -40124,6 +40150,96 @@ const store = (0, _toolkit.configureStore)({
 });
 exports.default = store;
 
-},{"@reduxjs/toolkit":"fuua8","./cartSlice":"1D8lC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
+},{"@reduxjs/toolkit":"fuua8","./cartSlice":"1D8lC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4Yvuo":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a65c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a65c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+function Form() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                htmlFor: "name",
+                children: "Name"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                id: "name",
+                name: "name"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                htmlFor: "email",
+                children: "E-mail"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 8,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                id: "email",
+                name: "email"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                htmlFor: "channel",
+                children: "Channel"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                id: "channel",
+                name: "channel"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                children: "Submit"
+            }, void 0, false, {
+                fileName: "src/components/Form.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Form.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = Form;
+exports.default = Form;
+var _c;
+$RefreshReg$(_c, "Form");
+
+  $parcel$ReactRefreshHelpers$a65c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["el7Pf","4Q7dv","2kQhy"], "2kQhy", "parcelRequiref158")
 
 //# sourceMappingURL=index.7271efb6.js.map
