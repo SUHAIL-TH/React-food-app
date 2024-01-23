@@ -4,7 +4,7 @@
 import { restrautlist } from '../src/constant'
 export function filterlist(searchtext, list) {
     if (searchtext === "") {
-        return restrautlist
+        return restrautlist    
     }
     else {
         return list.filter((data) => data?.name.toLowerCase().includes(searchtext.toLowerCase()))

@@ -4,10 +4,9 @@ import RestrauntCard from './Restruantcard'
 import { filterlist } from '../../utils/helper'
 //filtering function for the list
 import { addItem } from '../../utils/cartSlice'
-
+//new changes added 
 import useOnline from '../../utils/useOnline'
 import { useDispatch } from 'react-redux'
-
 
 const Body = ({user}) => {
    

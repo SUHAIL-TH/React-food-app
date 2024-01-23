@@ -1,7 +1,7 @@
 import HeaderComponent from "./Header"
 import { Outlet } from "react-router-dom"
 import ProfileFunction from './Profile'
-import ProfileClass from './ProfileClass'
+import ProfileClass from './ProfileClass'   
 import React from "react"
 // const About =()=>{
 //     return (
@@ -39,6 +39,6 @@ class AboutClass extends React.Component{
         )
     }
 }
-
+//hjasdjfkajsjdfdas
 // export default About
 export default AboutClass
