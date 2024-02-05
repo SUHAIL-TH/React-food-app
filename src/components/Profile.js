@@ -11,7 +11,8 @@ const Profile=(props)=>{
     })
    
     return (
-        <>
+        <> 
+        
         <h1>profile component</h1>
         <small>{props.name}</small>
         <h4>Count:{count}</h4>
