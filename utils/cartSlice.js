@@ -12,9 +12,11 @@ const cartSlice = createSlice({
         addItem: (state, action) => {
             state.items.push(action.payload)
         },
+        //logic return for removing the cart
         removeItem: (state, action) => {
             state.items.pop()
         },
+        //logic written for clearing the cart 
         clearCart: (state) => {
             state.items = []
         }
